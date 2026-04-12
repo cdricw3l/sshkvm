@@ -1,9 +1,9 @@
 CC		:= 	gcc
-GFLAGS	:= 	#-Werror -Wall -Wextra
+GFLAGS	:= 	-Werror -Wall -Wextra
 NAME	:= 	vm_auto
-SRCS	:= 	srcs/getnextline/get_next_line.c \
-			srcs/getnextline/get_next_line_utils.c \
-			srcs/vm_auto.c 
+SRCS	:= 	getnextline/get_next_line.c \
+			getnextline/get_next_line_utils.c \
+			srcs/dispatcher.c 
 COM := default commentaire
 SRCS_OBJS:= $(SRCS:.c=.o)
 LIB_FT	:= -Llibft_v2 -lft

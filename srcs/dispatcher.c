@@ -1,4 +1,4 @@
-# include "./vm_auto.h"
+# include "dispatcher.h"
 # include <sqlite3.h>
 
 char *get_pub_key(void)

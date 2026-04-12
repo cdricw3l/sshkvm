@@ -7,7 +7,7 @@
 #include <unistd.h>
 #include <assert.h>
 #include "../libft_v2/libft.h"
-#include "getnextline/get_next_line.h"
+#include "../getnextline/get_next_line.h"
 
 #define DB "db/vm.db"
 
