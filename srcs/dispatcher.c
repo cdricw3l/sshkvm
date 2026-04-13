@@ -1,5 +1,4 @@
 #include "dispatcher.h"
-#include <sqlite3.h>
 
 int	check_and_dispatch(char *arg)
 {

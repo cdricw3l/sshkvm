@@ -2,6 +2,7 @@
 #define DISPATCHER_H
 
 
+#include <sqlite3.h>
 #include "ssh_identification.h"
 #define DB "db/vm.db"
 
