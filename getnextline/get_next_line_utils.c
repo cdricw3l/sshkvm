@@ -72,7 +72,7 @@ int	ft_strjoin_c(char **line, char **buffer)
 		*line = ft_substr_c(*buffer, 0, ft_strlen_c(*buffer));
 		if (!(*line))
 			return (ERROR);
-		return (OK);
+		return (OKK);
 	}
 	new_line = malloc(sizeof(char)
 			*(ft_strlen_c(*line) + ft_strlen_c(*buffer) + 1));
@@ -83,7 +83,7 @@ int	ft_strjoin_c(char **line, char **buffer)
 		*buffer, ft_strlen_c(*buffer) + 1);
 	free(*line);
 	*line = new_line;
-	return (OK);
+	return (OKK);
 }
 
 int	idx_of_c(char *str, char c)

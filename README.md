@@ -114,3 +114,41 @@ Le script (ou programme) test.sh agit comme un contrôleur central.
             ↓
     [ Machines Virtuelles ]
 ```
+
+# ⚙️ Implémentation – Identification via SSH
+
+À chaque connexion SSH vers l’utilisateur student, le programme dispatcher est exécuté automatiquement via ForceCommand dans OpenSSH.
+
+## 🔐 Récupération des informations d’authentification
+
+Le serveur SSH est configuré avec :
+
+```
+ExposeAuthInfo yes
+```
+
+👉 Cette option permet de :
+
+    * générer un fichier temporaire contenant les informations d’authentification
+    * exposer son chemin via la variable d’environnement :
+    ```
+    char *auth_info_path = getenv("SSH_USER_AUTH");
+    ``` 
+
+## 🧠 Exploitation
+
+Le programme dispatcher :
+
+    Lit le fichier pointé par SSH_USER_AUTH
+    Extrait la clé publique utilisée pour l’authentification
+    Compare cette clé avec celles présentes dans ~/.ssh/authorized_keys
+    Identifie l’utilisateur et son contexte (machine, permissions…)
+
+## 🧱 Structure de données
+
+typedef struct s_id
+{
+    char *user;     // identifiant utilisateur
+    char *pub_key;  // clé publique utilisée
+
+} t_id;

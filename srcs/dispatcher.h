@@ -1,14 +1,8 @@
 #ifndef DISPATCHER_H
 #define DISPATCHER_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <assert.h>
-#include "../libft_v2/libft.h"
-#include "../getnextline/get_next_line.h"
 
+#include "ssh_identification.h"
 #define DB "db/vm.db"
 
 #define CREATE_VM       0
@@ -18,14 +12,7 @@
 #define HELP            4
 #define DISPATCH_ERR    5
 
-#define ERR             0
-#define OK              1
 
-typedef struct s_id
-{
-	char *user;
-	char *pub_key;
 
-} t_id;
 
 #endif
