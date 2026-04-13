@@ -23,13 +23,18 @@ int main(void)
     else
         printf("Connexion OK!\n");
 
-    char *sql = "SELECT name FROM sqlite_master WHERE type='table';";
-    if(sqlite3_prepare_v2(db,sql,0, &st ,NULL) != SQLITE_OK)
+    char *sql = "SELECT * FROM test;";
+    if((r = sqlite3_prepare_v2(db,sql,-1, &st ,NULL)) != SQLITE_OK)
         return(sqlite_error(db));
     else
-        printf("Statment ready OK!\n");
-    if((r == sqlite3_step(st)) != SQLITE_DONE)
-        return(sqlite_error(db));
+        printf("Statment ready OK! %d\n", r);
+    ;
+    while((r = sqlite3_step(st)) == SQLITE_ROW)
+    {
+       char *str = (char *)sqlite3_column_text(st,0);
+       if (str)
+            printf("str: %s\n",str);
+    }
     sqlite3_close(db);   
     return(0);
 }
