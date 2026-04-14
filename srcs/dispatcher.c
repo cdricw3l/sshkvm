@@ -44,9 +44,12 @@ void	ft_print_help(void)
 int	main(void)
 {
 	t_id	id;
+	int		err;
 	char	*arg;
 	int		dispatch_code;
 
+	if((err = db_initialisation()) != SQLITE_OK)
+		return (err);
 	if (ssh_identification(&id) != OK)
 	{
 		printf("Identification error\n");

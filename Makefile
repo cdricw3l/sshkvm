@@ -4,8 +4,9 @@ NAME	:= 	vm_auto
 SRCS	:= 	getnextline/get_next_line.c \
 			getnextline/get_next_line_utils.c \
 			srcs/dispatcher.c \
-			srcs/ssh_identification.c 
-SRCS_SQ	:= srcs/sqlite_test.c
+			srcs/ssh_identification.c \
+			srcs/db_managment.c
+SRCS_SQ	:= srcs/db_managment.c
 COM := default commentaire
 SRCS_OBJS:= $(SRCS:.c=.o)
 SQL_OBJS:= $(SRCS_SQ:.c=.o)

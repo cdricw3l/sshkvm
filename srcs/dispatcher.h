@@ -4,7 +4,9 @@
 
 #include <sqlite3.h>
 #include "ssh_identification.h"
-#define DB "db/vm.db"
+#include "db_managment.h"
+#define NL printf("\n")
+
 
 #define CREATE_VM       0
 #define RESTART_VM      1
