@@ -36,6 +36,7 @@ fclean: clean
 re: fclean $(NAME)
 
 git: fclean
+	cd libft_v2 && make clean && cd ..
 	git add .
 	git commit -m $(COM)
 	git push origin $(shell git branch --show-current)
