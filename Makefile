@@ -1,6 +1,6 @@
 CC		:= 	gcc
 GFLAGS	:= 	
-NAME	:= 	vm_auto
+NAME	:= 	sshkvm
 SRCS	:= 	getnextline/get_next_line.c \
 			getnextline/get_next_line_utils.c \
 			srcs/dispatcher.c \
